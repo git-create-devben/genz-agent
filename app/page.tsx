@@ -6,6 +6,14 @@ import { Sparkles, FileText, ImageIcon, Type, Film, MessageSquare, ArrowRight } 
 import Link from "next/link"
 import { SignInButton } from "@clerk/nextjs"
 
+interface FeatureCardProps {
+  icon?: React.ReactNode;
+  title?: string;
+  description?: string;
+  number?:string;
+  question?:string;
+  answer?:string;
+}
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-black text-white">
@@ -269,20 +277,21 @@ export default function LandingPage() {
   )
 }
 
-function FeatureCard({ icon, title, description }: any) {
+
+
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
     <Card className="bg-gray-800 border-gray-700 hover:border-blue-500 transition-colors">
       <CardContent className="p-6">
         <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-4">{icon}</div>
         <h3 className="text-lg font-semibold mb-2 text-blue-500">{title}</h3>
         <p className="text-gray-400">{description}</p>
-
       </CardContent>
     </Card>
   )
 }
 
-function StepCard({ number, title, description }: any) {
+function StepCard({ number, title, description }: FeatureCardProps) {
   return (
     <div className="text-center">
       <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
@@ -294,7 +303,7 @@ function StepCard({ number, title, description }: any) {
   )
 }
 
-function FaqItem({ question, answer }: any) {
+function FaqItem({ question, answer }: { question: string; answer: string }) {
   return (
     <AccordionItem value={question} className="border-b border-gray-800">
       <AccordionTrigger className="text-left font-medium py-4 text-gray-200">{question}</AccordionTrigger>
