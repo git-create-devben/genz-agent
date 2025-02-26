@@ -2,9 +2,8 @@ import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { Sparkles, FileText, ImageIcon, Type, Film, MessageSquare, ArrowRight, ChevronRight } from "lucide-react"
+import { Sparkles, FileText, ImageIcon, Type, Film, MessageSquare, ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { ThemeToggle } from "@/components/ThemeToggle"
 import { SignInButton } from "@clerk/nextjs"
 
 export default function LandingPage() {
