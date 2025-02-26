@@ -6,14 +6,7 @@ import { Sparkles, FileText, ImageIcon, Type, Film, MessageSquare, ArrowRight } 
 import Link from "next/link"
 import { SignInButton } from "@clerk/nextjs"
 
-interface FeatureCardProps {
-  icon?: React.ReactNode;
-  title?: string;
-  description?: string;
-  number?:string;
-  question?:string;
-  answer?:string;
-}
+
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-black text-white">
@@ -279,7 +272,7 @@ export default function LandingPage() {
 
 
 
-function FeatureCard({ icon, title, description }: FeatureCardProps) {
+function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
     <Card className="bg-gray-800 border-gray-700 hover:border-blue-500 transition-colors">
       <CardContent className="p-6">
@@ -291,7 +284,7 @@ function FeatureCard({ icon, title, description }: FeatureCardProps) {
   )
 }
 
-function StepCard({ number, title, description }: FeatureCardProps) {
+function StepCard({ number, title, description }: { number: string; title: string; description: string }) {
   return (
     <div className="text-center">
       <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
