@@ -245,11 +245,19 @@ export default function LandingPage() {
   )
 }
 
-function FeatureCard({ icon, title, description }) {
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
     <Card className="bg-gray-800 border-gray-700 hover:border-blue-500 transition-colors">
       <CardContent className="p-6">
-        <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-4">{icon}</div>
+        <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-4">
+          {icon}
+        </div>
         <h3 className="text-lg font-semibold mb-2">{title}</h3>
         <p className="text-gray-400">{description}</p>
         <div className="mt-4 flex items-center text-blue-400 font-medium">
@@ -261,7 +269,13 @@ function FeatureCard({ icon, title, description }) {
   )
 }
 
-function StepCard({ number, title, description }) {
+interface StepCardProps {
+  number: string;
+  title: string;
+  description: string;
+}
+
+function StepCard({ number, title, description }: StepCardProps) {
   return (
     <div className="text-center">
       <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
@@ -273,7 +287,12 @@ function StepCard({ number, title, description }) {
   )
 }
 
-function FaqItem({ question, answer }) {
+interface FaqItemProps {
+  question: string;
+  answer: string;
+}
+
+function FaqItem({ question, answer }: FaqItemProps) {
   return (
     <AccordionItem value={question} className="border-b border-gray-800">
       <AccordionTrigger className="text-left font-medium py-4 text-gray-200">{question}</AccordionTrigger>
