@@ -6,6 +6,8 @@ import Link from "next/link"
 import { currentUser } from "@clerk/nextjs/server"
 import React from "react"
 import FeatureCard from "@/components/FeatureCard"
+import FaqItem from "@/components/FaqItem"
+import StepCard from "@/components/StepCard"
 
 export default async function LandingPage() {
   const user = await currentUser()
@@ -277,30 +279,4 @@ export default async function LandingPage() {
   )
 }
 
-
-
-
-
-
-
-function StepCard({ number, title, description }: { number: string; title: string; description: string }) {
-  return (
-    <div className="text-center">
-      <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
-        <span className="text-2xl font-bold text-blue-400">{number}</span>
-      </div>
-      <h3 className="text-xl text-blue-500 font-semibold mb-2">{title}</h3>
-      <p className="text-gray-400">{description}</p>
-    </div>
-  )
-}
-
-function FaqItem({ question, answer }: { question: string; answer: string }) {
-  return (
-    <AccordionItem value={question} className="border-b border-gray-800">
-      <AccordionTrigger className="text-left font-medium py-4 text-gray-200">{question}</AccordionTrigger>
-      <AccordionContent className="text-gray-400 pb-4">{answer}</AccordionContent>
-    </AccordionItem>
-  )
-}
 
